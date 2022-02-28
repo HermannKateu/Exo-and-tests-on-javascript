@@ -1,39 +1,42 @@
-const guesting= (guestNumber) => {
-  let min=1;
-  let max=10
-  const randomNumber= Math.floor(Math.random() * (max - min + min) + min);
+const matchInputWithRandom = (inputNumber) => {
+  const min=1;
+  const max=10;
+  const randomNumber = Math.floor(Math.random() * (max - min + min) + min);
   Math.ceil(min);
   Math.floor(max);
-  return (guestNumber == randomNumber)? 'GOOD WORK!!!!!!!':'NOT MATCHED';
+  return (inputNumber == randomNumber)? 'GOOD WORK!!!!!!!' : 'NOT MATCHED';    
 }
 
 
-const christMas= (year) =>{
+const daysLeftToChristmas = (year) =>{
   const today= new Date().getTime();
-  let nextChrist= new Date(`${year}`,11,25);
-return ((nextChrist-today) < 0)? `${Math.ceil(-1*(nextChrist-today)/(3600000*24))} days had already passed since ${year}`:`Reamaning ${Math.ceil((nextChrist-today)/(24 * 3600000))} days for the next Christmas`;
+  const nextChristmas= new Date(`${year}`,11,25);
+  if((nextChristmas-today) < 0){ 
+    return `${Math.ceil(-1*(nextChristmas-today)/(3600000*24))} days had already passed since ${year}`
+  }
+  else{
+   return `Reamaning ${Math.ceil((nextChristmas-today)/(24 * 3600000))} days for the next Christmas`;
+  }
 }
    
 
 
-function sumOfCubes(max){
-    let sum=0;
-    for(let i=0; i<(max+1); i++){
-       sum += Math.pow(i,3)
-    }
-    return sum
+function sumOfCubes(maximumNumber){
+  let summingToMaximun=0;
+  for(let i=0; i<(maximumNumber+1); i++){
+     summingToMaximun += Math.pow(i,3)
   }
+  return summingToMaximun
+}
 
 
-const student = {
-  name : "David Rayy",
-  sclass : "VI",
-  rollno : 12 
-};
-
-console.log(student)
-delete student.rollno;
-console.log(student);
+const deleteObjectProperty = (object, property) =>{
+  if(object.hasOwnProperty(property)){
+    delete object[property];
+  }
+ return object;
+} 
+console.log( deleteObjectProperty({name:'john',sex:'male',age:20},'age'));
 
 
 const volumeOfCylinder= (Radius,Height) =>{
@@ -43,69 +46,80 @@ const volumeOfCylinder= (Radius,Height) =>{
 }
     
     
-function determiner(string) {
-  return (string==string.toLowerCase())?true:false;
+function stringVerification(string) {
+  return (string==string.toLowerCase()) ? true : false;
 }
 
-
-function longestString(arr){
-  return arr.reduce((prev,curr)=>{
-    if(prev.length>curr.length) return prev
+function longestStringOfArray(array){
+  return array.reduce((previous, current)=>{
+    if(previous.length>current.length)
+      return previous;
     else{
-      return curr;
-    }
+      return current
+    };  
   })
-} 
+}
   
-const largestInt = (arr) => {
-  const evenNumbers=arr.filter(number => number%2==0)
+const largestIntegerOfArray = (array) => {
+  const evenNumbers = array.filter(number => number%2 == 0)
   return Math.max(...evenNumbers)
 }
 
 
-function multiplication(x,y) {
-    let mult;
-    return (x==0 || y==0)? mult='Any multiplication by 0 is "0"': 
-    (typeof x!== "number" && typeof y!=="number")? mult=`Expected number but {x} and {y} given`: 
-    (x!==0 && y!==0)? mult=x*y:
-    mult = '';
+
+function multiplication(firstValue,secondValue) {
+  let multiplier;
+  if(firstValue==0 || secondValue==0){
+    multiplier='Any multiplication by 0 is "0"';
+  } 
+  else if(firstValue!==0 && secondValue!==0){
+    multiplier = firstValue*secondValue;
+  }
+  return multiplier;
 }
 
 
 
-function division(x,y) {
-    let div;
-     return (x==0 && y==0)? div='Impossible to divide a number by "0"':
-     (x==0 && y!==0)? div='The result is "0"' :
-     (x!==0 && y!==0)? div=x/y:
-     (typeof x!=="number" || typeof y !== "number")? div=`Expected number but {x} and {y} given`: 
-    div = ""
+function division(numerator, denominator) {
+  let divider;
+  if(numerator !==0 && denominator==0){ 
+    divider='Impossible to divide a number by "0"';
+  }
+  else if(numerator==0 && denominator!==0){
+    divider='The result is "0"';
+  }   
+  else if(numerator!==0 && denominator!==0){
+    divider = numerator/denominator;
+  }
+  else if(typeof numerator !== 'number' || typeof denominator !== 'number'){
+    divider=`Expected number to be entered`;
+  } 
+  return divider;
 }
 
-const comparism=(obj1,obj2)=>{
-  const objectVal1=Object.values(obj1);
-  const objectVal2=Object.values(obj2); 
-  const verify= objectVal1.filter(item=>objectVal2.includes(item))
- return (verify.length>0)?true:false;
+const comparismOfTwoObjects=(firstObject,secondObject)=>{
+  const objectFirstValues=Object.values(firstObject);
+  const objectSecondValues=Object.values(secondObject); 
+  const verificationOfValues = objectFirstValues.filter(items => objectSecondValues.includes(items))
+  return (verificationOfValues.length>0) ? true : false;
 }
 
 
-function filtered(arr,...elem) {
-  return arr.filter(number => elem.every(number2 => number2 !== number));
+function filteringArray(array,...precisedValues) {
+  return array.filter(elementOfArray => precisedValues.every(element => element !== elementOfArray));
 }
 
 
-
-const deleteCharacter = (str) =>{
-  const container= new Set(str.split(''))
-  let array=[];
+const deleteRepeatedCharacter = (string) =>{
+  const container= new Set(string.split(''))
+  const array=[];
   array.push(...container)
   return array.join('');
 }
  
 
 
-const extract = (arr, posi) => posi.map(x => arr[x])
+const extractingSpecifiedIndex = (array, specifiedIndex) => specifiedIndex.map(x => array[x])
 
 
 const add= (x=null,y=null) =>{
@@ -123,14 +137,14 @@ add(2, 4).then((result)=>result).catch(error=>error);
 
   
 function clock(){
-  let today=new Date()
-  let hours=today.getHours();
-  let minutes=today.getMinutes();
-  let seconds=today.getSeconds();
-  `${hours}:${minutes}:${seconds}`
+  const today=new Date()
+  const hours=today.getHours();
+  const minutes=today.getMinutes();
+  const seconds=today.getSeconds();
+  `${hours}:${minutes}:${seconds}`;
   setInterval(clock,1000)
 }
 
-export{ guesting, christMas, clock, add, extract, deleteCharacter, filtered,
-  comparism, division, multiplication, largestInt, longestString, determiner,
+export{ matchInputWithRandom, daysLeftToChristmas, deleteObjectProperty,clock, add, extractingSpecifiedIndex, deleteRepeatedCharacter, filteringArray,
+  comparismOfTwoObjects, division, multiplication, largestIntegerOfArray, longestStringOfArray, stringVerification,
   volumeOfCylinder, sumOfCubes }
