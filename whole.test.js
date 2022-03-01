@@ -1,5 +1,5 @@
 import { matchInputWithRandom, daysLeftToChristmas, clock, add, extractingSpecifiedIndex, deleteRepeatedCharacter, filteringArray,
-    comparismOfTwoObjects, division, multiplication, largestIntegerOfArray, longestStringOfArray, stringVerification,
+    comparismOfTwoObjects, division, multiplication, largestEvenIntegerOfArray, longestStringOfArray, stringVerification,
     volumeOfCylinder, sumOfCubes,deleteObjectProperty } from "./whole.js";
 test('removing the object property',()=>{
     expect(deleteObjectProperty({
@@ -32,7 +32,7 @@ test('Return the longest string of an array', () => {
 
 
 test('The largest even number', () => {
-    expect(largestIntegerOfArray([1,2,3,23,84,43,2,2,20])).toBe(84)
+    expect(largestEvenIntegerOfArray([1,2,3,23,84,43,2,2,20])).toBe(84)
 })
 
 

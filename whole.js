@@ -59,7 +59,7 @@ const longestStringOfArray = (array) => {
   })
 }
   
-const largestIntegerOfArray = (array) => {
+const largestEvenIntegerOfArray = (array) => {
   const evenNumbers = array.filter(number => number%2 == 0)
   return Math.max(...evenNumbers)
 }
@@ -145,5 +145,5 @@ const clock = () => {
 }
 
 export{ matchInputWithRandom, daysLeftToChristmas, deleteObjectProperty,clock, add, extractingSpecifiedIndex, deleteRepeatedCharacter, filteringArray,
-  comparismOfTwoObjects, division, multiplication, largestIntegerOfArray, longestStringOfArray, stringVerification,
+  comparismOfTwoObjects, division, multiplication, largestEvenIntegerOfArray, longestStringOfArray, stringVerification,
   volumeOfCylinder, sumOfCubes }
