@@ -1,6 +1,6 @@
-const comparism=(obj1,obj2)=>{
-  const objectVal1=Object.values(obj1);
-  const objectVal2=Object.values(obj2); 
-  const verify= objectVal1.filter(item=>objectVal2.includes(item))
-  return (verify.length>0)?true:false;
+const comparismOfTwoObjects = (firstObject,secondObject) => {
+  const objectFirstValues=Object.values(firstObject);
+  const objectSecondValues=Object.values(secondObject); 
+  const verificationOfValues = objectFirstValues.filter(items => objectSecondValues.includes(items))
+  return (verificationOfValues.length>0) ? true : false;
 }

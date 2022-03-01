@@ -3,4 +3,3 @@ const volumeOfCylinder= (Radius,Height) =>{
     const volume=(2*PI*Radius*Height)
     return volume;
 }
-console.log(volumeOfCylinder(2,3));

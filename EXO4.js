@@ -1,8 +1,10 @@
-function longestString(arr){
-    return arr.reduce((prev,curr)=>{
-      if(prev.length>curr.length) return prev
-      else{
-      return curr;
-    }
+const longestStringOfArray = (array) => {
+  return array.reduce((previous, current)=>{
+    if(previous.length>current.length){
+      return previous
+    } 
+    else{
+      return current
+    };  
   })
 }

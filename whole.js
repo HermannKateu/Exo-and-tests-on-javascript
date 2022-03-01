@@ -21,7 +21,7 @@ const daysLeftToChristmas = (year) =>{
    
 
 
-function sumOfCubes(maximumNumber){
+const sumOfCubes = (maximumNumber) => {
   let summingToMaximun=0;
   for(let i=0; i<(maximumNumber+1); i++){
      summingToMaximun += Math.pow(i,3)
@@ -36,7 +36,6 @@ const deleteObjectProperty = (object, property) =>{
   }
  return object;
 } 
-console.log( deleteObjectProperty({name:'john',sex:'male',age:20},'age'));
 
 
 const volumeOfCylinder= (Radius,Height) =>{
@@ -46,11 +45,11 @@ const volumeOfCylinder= (Radius,Height) =>{
 }
     
     
-function stringVerification(string) {
+const stringVerification = (string) => {
   return (string==string.toLowerCase()) ? true : false;
 }
 
-function longestStringOfArray(array){
+const longestStringOfArray = (array) => {
   return array.reduce((previous, current)=>{
     if(previous.length>current.length)
       return previous;
@@ -67,7 +66,7 @@ const largestIntegerOfArray = (array) => {
 
 
 
-function multiplication(firstValue,secondValue) {
+const multiplication = (firstValue,secondValue) => {
   let multiplier;
   if(firstValue==0 || secondValue==0){
     multiplier='Any multiplication by 0 is "0"';
@@ -80,7 +79,7 @@ function multiplication(firstValue,secondValue) {
 
 
 
-function division(numerator, denominator) {
+const division = (numerator, denominator) => {
   let divider;
   if(numerator !==0 && denominator==0){ 
     divider='Impossible to divide a number by "0"';
@@ -105,7 +104,7 @@ const comparismOfTwoObjects=(firstObject,secondObject)=>{
 }
 
 
-function filteringArray(array,...precisedValues) {
+const filteringArray = (array,...precisedValues) =>{
   return array.filter(elementOfArray => precisedValues.every(element => element !== elementOfArray));
 }
 
@@ -122,7 +121,7 @@ const deleteRepeatedCharacter = (string) =>{
 const extractingSpecifiedIndex = (array, specifiedIndex) => specifiedIndex.map(x => array[x])
 
 
-const add= (x=null,y=null) =>{
+const add = (x=null,y=null) =>{
   return new Promise((resolve,reject)=>{
       if(typeof x!=="number" || typeof y!=='number'){
           reject('Must enter the two parameters')     
@@ -136,7 +135,7 @@ add().then((result)=>result).catch(error=>error);
 add(2, 4).then((result)=>result).catch(error=>error);
 
   
-function clock(){
+const clock = () => {
   const today=new Date()
   const hours=today.getHours();
   const minutes=today.getMinutes();

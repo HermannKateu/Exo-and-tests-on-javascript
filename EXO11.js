@@ -1,9 +1,7 @@
-let student = {
-    name : "David Rayy",
-    sclass : "VI",
-    rollno : 12 
-};
-
-    console.log(student)
-    delete student.rollno;
-    console.log(student);
+const deleteObjectProperty = (object, property) =>{
+    if(object.hasOwnProperty(property)){
+      delete object[property];
+    }
+   return object;
+  } 
+  console.log( deleteObjectProperty({name:'john',sex:'male',age:20},'age'));

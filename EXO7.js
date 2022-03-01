@@ -1,9 +1,8 @@
-function sumOfCubes(max){
-   let sum=0;
-   for(let i=0; i<(max+1); i++){
-      sum += Math.pow(i,3)
+const sumOfCubes = (maximumNumber) => {
+   let summingToMaximun=0;
+   for(let i=0; i<(maximumNumber+1); i++){
+      summingToMaximun += Math.pow(i,3)
    }
-   return sum
+   return summingToMaximun
 }
-  console.log(sumOfCubes(3))
   

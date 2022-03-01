@@ -1,3 +1,3 @@
-function determiner(string) {
-    return (string==string.toLowerCase())?true:false;
+const stringVerification = (string) =>{
+    return (string==string.toLowerCase()) ? true : false;
 }
