@@ -1,3 +1,3 @@
-const stringVerification = (string) =>{
-    return (string==string.toLowerCase()) ? true : false;
+const stringVerification = (value) =>{
+    return (value==value.toLowerCase());
 }

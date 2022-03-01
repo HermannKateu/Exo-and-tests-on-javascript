@@ -38,15 +38,15 @@ const deleteObjectProperty = (object, property) =>{
 } 
 
 
-const volumeOfCylinder= (Radius,Height) =>{
+const volumeOfCylinder= (radius,height) =>{
   const PI=3.1416;
-  const volume=(2*PI*Radius*Height)
+  const volume=(2*PI*radius*height)
   return volume;
 }
     
     
-const stringVerification = (string) => {
-  return (string==string.toLowerCase()) ? true : false;
+const stringVerification = (value) => {
+  return (value==value.toLowerCase())
 }
 
 const longestStringOfArray = (array) => {
@@ -100,7 +100,7 @@ const comparismOfTwoObjects=(firstObject,secondObject)=>{
   const objectFirstValues=Object.values(firstObject);
   const objectSecondValues=Object.values(secondObject); 
   const verificationOfValues = objectFirstValues.filter(items => objectSecondValues.includes(items))
-  return (verificationOfValues.length>0) ? true : false;
+  return (verificationOfValues.length>0);
 }
 
 
