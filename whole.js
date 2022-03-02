@@ -96,7 +96,7 @@ const division = (numerator, denominator) => {
   return divider;
 }
 
-const equalObejct = (object1, object2) =>{
+const equalObject = (object1, object2) =>{
   const object1Property = Object.keys(object1);
   const object2Property = Object.keys(object2);
   const status = [];
@@ -152,5 +152,5 @@ const clock = () => {
 }
 
 export{ matchInputWithRandom, daysLeftToChristmas, deleteObjectProperty,clock, add, extractingSpecifiedIndex, deleteRepeatedCharacter, filteringArray,
-  equalObejct, division, multiplication, largestEvenIntegerOfArray, longestStringOfArray, stringVerification,
+  equalObject, division, multiplication, largestEvenIntegerOfArray, longestStringOfArray, stringVerification,
   volumeOfCylinder, sumOfCubes }

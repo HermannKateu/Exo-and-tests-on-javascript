@@ -1,4 +1,4 @@
-const equalObejct = (object1, object2) =>{
+const equalObject = (object1, object2) =>{
   const object1Property = Object.keys(object1);
   const object2Property = Object.keys(object2);
   const status = [];
