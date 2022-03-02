@@ -1,5 +1,5 @@
 import { matchInputWithRandom, daysLeftToChristmas, clock, add, extractingSpecifiedIndex, deleteRepeatedCharacter, filteringArray,
-    comparismOfTwoObjects, division, multiplication, largestEvenIntegerOfArray, longestStringOfArray, stringVerification,
+    equalObejct, division, multiplication, largestEvenIntegerOfArray, longestStringOfArray, stringVerification,
     volumeOfCylinder, sumOfCubes,deleteObjectProperty } from "./whole.js";
 test('removing the object property',()=>{
     expect(deleteObjectProperty({
@@ -70,20 +70,35 @@ describe('Guest if an input number is same as random number',()=>{
 })
 
 
-describe('Check if two object have equal properties',()=>{
-    test("when the prperties are equal",()=>{
-        expect(comparismOfTwoObjects({name: "Aflac",
+describe('Check if two objects have equal properties values',()=>{
+    test("when the properties are equal",()=>{
+        expect(equalObejct({name: "Aflac",
         numLegs: 2
         },
-        {name: "Aflaca",
-        numLegs: 2,})).toBe(true)
+        {name: "Aflac",
+        numLegs: 2,})).toEqual(true)
     })
-    test("when the prperties are all unequal",()=>{
-        expect(comparismOfTwoObjects({name: "Afla",
+    test('When their length are not Equal',()=>{
+        expect(equalObejct({surname: "Aflac",
         numLegs: 1
         },
         {name: "Aflac",
-        numLegs: 2,})).toBe(false)
+        surname:'Paul',
+        numLegs: 2})).toBe(false)
+    })
+    test("when the properties are all unequal",()=>{
+        expect(equalObejct({surname: "Aflac",
+        numLegs: 1
+        },
+        {name: "Aflac",
+        numLegs: 2})).toEqual(false)
+    })
+    test('When both values and properties are not equal',()=>{
+        expect(equalObejct({surname: "Aflac",
+        numLegs: 1
+        },
+        {name: "Aflac",
+        numLegs: 2,})).toEqual(false)
     })
 })
 

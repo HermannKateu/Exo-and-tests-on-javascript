@@ -96,12 +96,19 @@ const division = (numerator, denominator) => {
   return divider;
 }
 
-const comparismOfTwoObjects=(firstObject,secondObject)=>{
-  const objectFirstValues=Object.values(firstObject);
-  const objectSecondValues=Object.values(secondObject); 
-  const verificationOfValues = objectFirstValues.filter(items => objectSecondValues.includes(items))
-  return (verificationOfValues.length>0);
+const equalObejct = (object1, object2) =>{
+  const object1Property = Object.keys(object1);
+  const object2Property = Object.keys(object2);
+  const status = [];
+  if(object1Property.length == object2Property.length){
+      for(const property in object1){
+      status.push((object2.hasOwnProperty(`${property}`) && object1[property]==object2[property]))    
+      }
+    return  status.filter(item => item===false).length === 0;
+  }
+  return false;
 }
+
 
 
 const filteringArray = (array,...precisedValues) =>{
@@ -145,5 +152,5 @@ const clock = () => {
 }
 
 export{ matchInputWithRandom, daysLeftToChristmas, deleteObjectProperty,clock, add, extractingSpecifiedIndex, deleteRepeatedCharacter, filteringArray,
-  comparismOfTwoObjects, division, multiplication, largestEvenIntegerOfArray, longestStringOfArray, stringVerification,
+  equalObejct, division, multiplication, largestEvenIntegerOfArray, longestStringOfArray, stringVerification,
   volumeOfCylinder, sumOfCubes }
