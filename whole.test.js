@@ -1,5 +1,5 @@
 import { matchInputWithRandom, daysLeftToChristmas, clock, add, extractingSpecifiedIndex, deleteRepeatedCharacter, filteringArray,
-    equalObject, division, multiplication, largestEvenIntegerOfArray, longestStringOfArray, stringVerification,
+    equalObject, division, multiplication, largestEvenIntegerOfArray, longestStringOfArray, isLowerCase,
     volumeOfCylinder, sumOfCubes,deleteObjectProperty } from "./whole.js";
 test('removing the object property',()=>{
     expect(deleteObjectProperty({
@@ -19,10 +19,15 @@ test('Taking a number and giving the sum of cubes from 1 to the number', () => {
 test('Volume of a cylinder', () => {
     expect(volumeOfCylinder(2,3)).toBe(37.6992)
 });
-
+test('When either the radius or height is "0"',()=>{
+    expect(volumeOfCylinder(2,0)).toBe(0)
+})
 
 test('determining if a string is in lower case', () => {
-    expect(stringVerification('hello')).toBe(true)
+    expect(isLowerCase('hello')).toBe(true)
+})
+test("When the string is in upper case",()=>{
+    expect(isLowerCase('HELLO')).toBe(false)
 })
 
 
@@ -115,12 +120,18 @@ describe("Deletion of duplicated values",()=>{
     test("Let's try on",()=>{
         expect(deleteRepeatedCharacter('aabbccdd')).toEqual('abcd')
     })
+    test('When no duplicated value exist',()=>{
+        expect(deleteRepeatedCharacter('abcd')).toBe('abcd')
+    })
 })
    
 
 describe("Extracting values from a specifyed indexes",()=>{
     test("Let go on",()=>{
         expect(extractingSpecifiedIndex([1,0,0,0,2,3,4],[0,4,5,6])).toEqual([1,2,3,4])
+    })
+    test("When no precise index is given",()=>{
+        expect(extractingSpecifiedIndex([1,0,0,0,2,3,4],[])).toEqual([])
     })
 })   
     

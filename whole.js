@@ -45,7 +45,7 @@ const volumeOfCylinder= (radius,height) =>{
 }
     
     
-const stringVerification = (value) => {
+const isLowerCase = (value) => {
   return (value==value.toLowerCase())
 }
 
@@ -152,5 +152,5 @@ const clock = () => {
 }
 
 export{ matchInputWithRandom, daysLeftToChristmas, deleteObjectProperty,clock, add, extractingSpecifiedIndex, deleteRepeatedCharacter, filteringArray,
-  equalObject, division, multiplication, largestEvenIntegerOfArray, longestStringOfArray, stringVerification,
+  equalObject, division, multiplication, largestEvenIntegerOfArray, longestStringOfArray, isLowerCase,
   volumeOfCylinder, sumOfCubes }
